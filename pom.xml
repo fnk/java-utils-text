@@ -15,6 +15,7 @@
 	        <name>Release Repository</name>
 	        <url>http://github.com/fnk/fnk-mvn-repo/raw/master/releases</url>
 	    </repository>
+	    <!-- TODO releasing does not work yet -->
 	    <snapshotRepository>
 	        <id>snapshot-repo</id>
 	        <name>Snapshot Repository</name>
@@ -23,8 +24,8 @@
     </distributionManagement>
     
     <scm>
-	    <connection>scm:git:ssh@github.com:fnk/java-utils-text.git</connection>
-	    <url>scm:git:ssh@github.com:fnk/java-utils-text.git</url>
+	    <connection>scm:git:git@github.com:fnk/java-utils-text.git</connection>
+	    <url>scm:git:git@github.com:fnk/java-utils-text.git</url>
 	    <developerConnection>scm:git:git@github.com:fnk/java-utils-text.git</developerConnection>  
 	</scm>
 
