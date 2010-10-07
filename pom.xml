@@ -23,8 +23,8 @@
     </distributionManagement>
     
     <scm>
-	    <connection>scm:git:git@github.com:fnk/java-utils-text.git</connection>
-	    <url>scm:git:git@github.com:fnk/java-utils-text.git</url>
+	    <connection>scm:git:ssh@github.com:fnk/java-utils-text.git</connection>
+	    <url>scm:git:ssh@github.com:fnk/java-utils-text.git</url>
 	    <developerConnection>scm:git:git@github.com:fnk/java-utils-text.git</developerConnection>  
 	</scm>
 
@@ -63,10 +63,15 @@
                 <version>2.0-beta-9</version>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.scm</groupId>
+                <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-scm-plugin</artifactId>
+		        <version>1.4</version>
+            </plugin>
+            <!-- 
+            <groupId>org.apache.maven.scm</groupId>
                 <artifactId>maven-scm-providers-git</artifactId>
                 <version>1.4</version>
-            </plugin>
+            -->
         </plugins>
     </build>
     
