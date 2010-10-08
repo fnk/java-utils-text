@@ -42,25 +42,25 @@ import java.util.Locale;
 /**
  * This comparator avoids that names with umlauts or lowercase first-letter
  * get pushed to the back of the list.<br>
- * Works for German.<br>
- * 
- * TODO test Icelandic, Danish and Norweigan 
+ * Works for German.<br><br>
+ * this can be pimped further:
+ * <ul>
+ *    <li><a href="http://java.sun.com/j2se/1.5.0/docs/api/java/text/RuleBasedCollator.html">http://java.sun.com/j2se/1.5.0/docs/api/java/text/RuleBasedCollator.html</a></li>
+ *    <li><a href="http://www.java2s.com/Code/Java/I18N/SortSpanishwithRuleBasedCollator.htm">http://www.java2s.com/Code/Java/I18N/SortSpanishwithRuleBasedCollator.htm</a></li>
+ * </ul>
+ * <p>TODO test Icelandic, Danish and Norweigan</p> 
  *
  * @author oss@andreasfink.com
  */
 public class LocalizedComparator implements Comparator<String> {
 	
-	private final Locale locale;
+	private final RuleBasedCollator collator;
 	
 	public LocalizedComparator(final Locale locale) {
-		this.locale = locale;
+		collator = (RuleBasedCollator)RuleBasedCollator.getInstance(locale);
 	}
 	
 	public int compare(final String string1, final String string2) {
-		// this can be pimped further:
-		//   http://java.sun.com/j2se/1.5.0/docs/api/java/text/RuleBasedCollator.html
-		//   http://www.java2s.com/Code/Java/I18N/SortSpanishwithRuleBasedCollator.htm
-		final RuleBasedCollator collator = (RuleBasedCollator)RuleBasedCollator.getInstance(locale);
 
 		return collator.compare(string1, string2);
 	}
