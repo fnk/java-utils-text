@@ -15,7 +15,6 @@
             <name>Release Repository</name>
             <url>sftp://andreasfink.com:34712/andreasfink.com/htdocs/repository/releases</url>
         </repository>
-        <!-- TODO releasing does not work yet -->
         <snapshotRepository>
             <id>snapshot-repo</id>
             <name>Snapshot Repository</name>
@@ -75,11 +74,6 @@
                 <artifactId>maven-scm-plugin</artifactId>
                 <version>1.4</version>
             </plugin>
-            <!-- 
-                <groupId>org.apache.maven.scm</groupId>
-                    <artifactId>maven-scm-providers-git</artifactId>
-                    <version>1.4</version>
-                -->
         </plugins>
     </build>
     
