@@ -1,13 +1,27 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-	
+    
     <groupId>com.andreasfink</groupId>
     <artifactId>utils-text</artifactId>
-    <version>1.7-SNAPSHOT</version>
+    <version>1.6-SNAPSHOT</version>
     <packaging>jar</packaging>
-	
+    
     <name>com.andreasfink.utils.text</name>
     <url>http://github.com/fnk/java-utils-text</url>
+    
+    <distributionManagement>
+        <repository>
+            <id>repo</id>
+            <name>Release Repository</name>
+            <url>sftp://andreasfink.com:34712/andreasfink.com/htdocs/repository/releases</url>
+        </repository>
+        <!-- TODO releasing does not work yet -->
+        <snapshotRepository>
+            <id>snapshot-repo</id>
+            <name>Snapshot Repository</name>
+            <url>sftp://andreasfink.com:34712/andreasfink.com/htdocs/repository/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
     
     <scm>
         <connection>scm:git:git@github.com:fnk/java-utils-text.git</connection>
@@ -21,8 +35,15 @@
         <guava-version>r09</guava-version>
         <junit-version>4.8.1</junit-version>
     </properties>
-	
+    
     <build>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ssh</artifactId>
+                <version>1.0-beta-7</version>
+            </extension>
+        </extensions>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -54,18 +75,11 @@
                 <artifactId>maven-scm-plugin</artifactId>
                 <version>1.4</version>
             </plugin>
-            <plugin>
-                <groupId>com.jakewharton</groupId>
-                <artifactId>github-deploy-maven-plugin</artifactId>
-                <version>1.0.1</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>deploy</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+            <!-- 
+                <groupId>org.apache.maven.scm</groupId>
+                    <artifactId>maven-scm-providers-git</artifactId>
+                    <version>1.4</version>
+                -->
         </plugins>
     </build>
     
@@ -102,7 +116,7 @@
             </plugin>
         </plugins>
     </reporting>
-	
+    
     <dependencies>
         <dependency>
             <groupId>com.google.guava</groupId>
