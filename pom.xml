@@ -8,20 +8,6 @@
 	
     <name>com.andreasfink.utils.text</name>
     <url>http://github.com/fnk/java-utils-text</url>
-	
-    <distributionManagement>
-        <repository>
-            <id>repo</id>
-            <name>Release Repository</name>
-            <url>sftp://andreasfink.com:34712/andreasfink.com/htdocs/repository/releases</url>
-        </repository>
-        <!-- TODO releasing does not work yet -->
-        <snapshotRepository>
-            <id>snapshot-repo</id>
-            <name>Snapshot Repository</name>
-            <url>sftp://andreasfink.com:34712/andreasfink.com/htdocs/repository/snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
     
     <scm>
         <connection>scm:git:git@github.com:fnk/java-utils-text.git</connection>
@@ -37,13 +23,6 @@
     </properties>
 	
     <build>
-        <extensions>
-            <extension>
-                <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-ssh-external</artifactId>
-                <version>1.0-beta-7</version>
-            </extension>
-        </extensions>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -75,11 +54,18 @@
                 <artifactId>maven-scm-plugin</artifactId>
                 <version>1.4</version>
             </plugin>
-            <!-- 
-                <groupId>org.apache.maven.scm</groupId>
-                    <artifactId>maven-scm-providers-git</artifactId>
-                    <version>1.4</version>
-                -->
+            <plugin>
+                <groupId>com.jakewharton</groupId>
+                <artifactId>github-deploy-maven-plugin</artifactId>
+                <version>1.0.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
     
