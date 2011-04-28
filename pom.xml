@@ -1,48 +1,48 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    
-    <groupId>com.andreasfink</groupId>
-    <artifactId>utils-text</artifactId>
-    <version>1.8-SNAPSHOT</version>
-    <packaging>jar</packaging>
-    
-    <name>com.andreasfink.utils.text</name>
-    <url>http://github.com/fnk/java-utils-text</url>
-    
-    <distributionManagement>
-        <repository>
-            <id>repo</id>
-            <name>Release Repository</name>
-            <url>sftp://andreasfink.com:34712/andreasfink.com/htdocs/repository/releases</url>
-        </repository>
-        <snapshotRepository>
-            <id>snapshot-repo</id>
-            <name>Snapshot Repository</name>
-            <url>sftp://andreasfink.com:34712/andreasfink.com/htdocs/repository/snapshots</url>
-        </snapshotRepository>
+	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>com.andreasfink</groupId>
+	<artifactId>utils-text</artifactId>
+	<version>1.9-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	
+	<name>com.andreasfink.utils.text</name>
+	<url>http://github.com/fnk/java-utils-text</url>
+	
+	<distributionManagement>
+	    <repository>
+	        <id>andreasfink-release-repository</id>
+	        <name>Release Repository</name>
+	        <url>scp://andreasfink.com:34712/home/andi/andreasfink.com/htdocs/repository/releases</url>
+	    </repository>
+	    <snapshotRepository>
+	        <id>andreasfink-snapshot-repository</id>
+	        <name>Snapshot Repository</name>
+	        <url>scp://andreasfink.com:34712/home/andi/andreasfink.com/htdocs/repository/snapshots</url>
+	    </snapshotRepository>
     </distributionManagement>
     
     <scm>
-        <connection>scm:git:git@github.com:fnk/java-utils-text.git</connection>
-        <url>scm:git:git@github.com:fnk/java-utils-text.git</url>
-        <developerConnection>scm:git:git@github.com:fnk/java-utils-text.git</developerConnection>  
-    </scm>
+	    <connection>scm:git:git@github.com:fnk/java-utils-text.git</connection>
+	    <url>scm:git:git@github.com:fnk/java-utils-text.git</url>
+	    <developerConnection>scm:git:git@github.com:fnk/java-utils-text.git</developerConnection>  
+	</scm>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!-- DEPENDENCIES -->
-        <guava-version>r09</guava-version>
-        <junit-version>4.8.1</junit-version>
-    </properties>
-    
-    <build>
-        <extensions>
+	<properties>
+	   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	   <!-- DEPENDENCIES -->
+	   <guava-version>r09</guava-version>
+	   <junit-version>4.8.1</junit-version>
+	</properties>
+	
+	<build>
+        <!--makes mvn deploy fail, works without anyway!! <extensions>
             <extension>
                 <groupId>org.apache.maven.wagon</groupId>
                 <artifactId>wagon-ssh</artifactId>
                 <version>1.0-beta-7</version>
             </extension>
-        </extensions>
+        </extensions>-->
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -71,8 +71,8 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-scm-plugin</artifactId>
-                <version>1.4</version>
+		        <artifactId>maven-scm-plugin</artifactId>
+		        <version>1.5</version>
             </plugin>
         </plugins>
     </build>
@@ -110,17 +110,17 @@
             </plugin>
         </plugins>
     </reporting>
-    
-    <dependencies>
+	
+	<dependencies>
+	   <dependency>
+		    <groupId>com.google.guava</groupId>
+		    <artifactId>guava</artifactId>
+		    <version>${guava-version}</version>
+		</dependency>
         <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>${guava-version}</version>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit-version}</version>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit-version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
