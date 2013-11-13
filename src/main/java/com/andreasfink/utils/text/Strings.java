@@ -79,5 +79,9 @@ public class Strings {
 
 		return sb.toString();
 	}
+	
+	public static String removePunctuation(final String text) {
+		return text.replaceAll("\\p{Punct}+", "");
+	}
 
 }
