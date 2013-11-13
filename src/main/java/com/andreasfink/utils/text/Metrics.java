@@ -35,10 +35,9 @@
  * ***** END LICENSE BLOCK ***** */
 package com.andreasfink.utils.text;
 
-import java.awt.Font;
-import java.awt.FontMetrics;
-import java.awt.Graphics2D;
+import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
 
 /**
  * Many methods use AWT-classes.<br>
@@ -59,6 +58,21 @@ public class Metrics {
 
 	public Metrics(final String fontName, final int size) {
 		font = new Font(fontName, Font.PLAIN, size);
+		metrics = graphics.getFontMetrics(font);
+	}
+	
+	public Metrics(final File fontFile, final int size) {
+		final Font newFont;
+		try {
+			newFont = Font.createFont(Font.TRUETYPE_FONT, fontFile);
+		} catch (final Throwable t) {
+			throw new RuntimeException("could not load font", t);
+		}
+		
+		final GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+		ge.registerFont(newFont);
+		
+		font = newFont.deriveFont(Font.PLAIN, size);
 		metrics = graphics.getFontMetrics(font);
 	}
 
