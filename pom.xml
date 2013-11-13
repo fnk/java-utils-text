@@ -3,7 +3,7 @@
 	
 	<groupId>com.andreasfink</groupId>
 	<artifactId>utils-text</artifactId>
-	<version>1.12</version>
+	<version>1.13-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	
 	<name>com.andreasfink.utils.text</name>
