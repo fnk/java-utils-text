@@ -31,7 +31,6 @@
 	<properties>
 	   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	   <!-- DEPENDENCIES -->
-	   <guava-version>[r09,14.0.1]</guava-version>
 	   <junit-version>4.8.1</junit-version>
 	   <sfntly-version>r161</sfntly-version>
 	</properties>
@@ -116,7 +115,7 @@
 	   <dependency>
 		    <groupId>com.google.guava</groupId>
 		    <artifactId>guava</artifactId>
-		    <version>${guava-version}</version>
+		    <version>[r09,14.0.1]</version>
 		</dependency>
 		
 	   <dependency>
