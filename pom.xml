@@ -13,12 +13,12 @@
 	    <repository>
 	        <id>andreasfink-release-repository</id>
 	        <name>Release Repository</name>
-	        <url>scp://andreasfink.com:34712/home/andi/andreasfink.com/htdocs/repository/releases</url>
+	        <url>scp://af/home/andi/andreasfink.com/htdocs/repository/releases</url>
 	    </repository>
 	    <snapshotRepository>
 	        <id>andreasfink-snapshot-repository</id>
 	        <name>Snapshot Repository</name>
-	        <url>scp://andreasfink.com:34712/home/andi/andreasfink.com/htdocs/repository/snapshots</url>
+	        <url>scp://af/home/andi/andreasfink.com/htdocs/repository/snapshots</url>
 	    </snapshotRepository>
     </distributionManagement>
     
@@ -31,8 +31,9 @@
 	<properties>
 	   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	   <!-- DEPENDENCIES -->
-	   <guava-version>r09</guava-version>
+	   <guava-version>[r09,14.0.1]</guava-version>
 	   <junit-version>4.8.1</junit-version>
+	   <sfntly-version>r161</sfntly-version>
 	</properties>
 	
 	<build>
@@ -117,6 +118,13 @@
 		    <artifactId>guava</artifactId>
 		    <version>${guava-version}</version>
 		</dependency>
+		
+	   <dependency>
+		    <groupId>com.google.typography</groupId>
+		    <artifactId>sfntly</artifactId>
+		    <version>${sfntly-version}</version>
+		</dependency>
+        
         <dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
