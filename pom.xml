@@ -13,12 +13,12 @@
 	    <repository>
 	        <id>andreasfink-release-repository</id>
 	        <name>Release Repository</name>
-	        <url>scp://andreasfink.com:34712/home/andi/andreasfink.com/htdocs/repository/releases</url>
+	        <url>scp://af/home/andi/andreasfink.com/htdocs/repository/releases</url>
 	    </repository>
 	    <snapshotRepository>
 	        <id>andreasfink-snapshot-repository</id>
 	        <name>Snapshot Repository</name>
-	        <url>scp://andreasfink.com:34712/home/andi/andreasfink.com/htdocs/repository/snapshots</url>
+	        <url>scp://af/home/andi/andreasfink.com/htdocs/repository/snapshots</url>
 	    </snapshotRepository>
     </distributionManagement>
     
